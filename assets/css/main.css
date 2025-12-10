@@ -1999,19 +1999,19 @@ ol {
 ========================================*/
 .hero-area {
   position: relative;
-  padding: 120px 0 80px 0;
+  padding: 60px 0 40px 0;
   background: linear-gradient(135deg, #1A7F4B 0%, #004E89 100%);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero-area {
-    padding: 100px 0 50px 0;
+    padding: 60px 0 30px 0;
   }
 }
 
 @media (max-width: 767px) {
   .hero-area {
-    padding: 90px 0 40px 0;
+    padding: 50px 0 25px 0;
   }
 }
 
