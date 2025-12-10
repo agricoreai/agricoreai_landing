@@ -8,14 +8,39 @@
     <meta name="description" content="AgriCore AI is a global agricultural intelligence platform designed to help farmers make better decisions using AI, real-time data, and localized guidance." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-
-    <!-- ========================= CSS here ========================= -->
+    
+    <!-- DNS Prefetch and Preconnect for faster external resource loading -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Preload critical hero image -->
+    <link rel="preload" href="assets/images/hero/phone.png" as="image" fetchpriority="high">
+    
+    <!-- Load fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Critical CSS - Load immediately -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <!-- Non-critical CSS - Load asynchronously -->
+    <script>
+        loadCSS("assets/css/LineIcons.2.0.css");
+        loadCSS("assets/css/animate.css");
+        loadCSS("assets/css/tiny-slider.css");
+        loadCSS("assets/css/glightbox.min.css");
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/tiny-slider.css">
+        <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    </noscript>
 
 </head>
 
@@ -38,6 +63,11 @@
         </div>
     </div>
     <!-- /End Preloader -->
+    
+    <!-- Async CSS loader -->
+    <script>
+        !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function d(){a.addEventListener&&a.removeEventListener("load",d),a.media=r||"all"}var a,i=e.document,a=i.createElement("link");if(n)a.href=n;if(r||(r="print",a.onloadcssdefined=function(e){for(var t,n=a.sheet.cssRules,i=0;i<n.length;i++)e.test(n[i].cssText)&&(e(),t=!0);t||e()}),a.rel="stylesheet",a.addEventListener&&a.addEventListener("load",d),a.onloadcssdefined&&a.onloadcssdefined(d),!a.href)return;o(function(){i.head.appendChild(a)})};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
 
     <!-- Start Header Area -->
     <header class="header navbar-area">
@@ -114,7 +144,7 @@
                 </div>
                 <div class="col-lg-7 col-md-12 col-12">
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                        <img src="assets/images/hero/phone.png" alt="#">
+                        <img src="assets/images/hero/phone.png" alt="#" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -425,7 +455,7 @@
                     <!-- Start Single Team -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".2s" style="text-align: center;">
                         <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid #1A7F4B;">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces" alt="Jim Njie" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces" alt="Jim Njie" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                         </div>
                         <h3>Jim Njie</h3>
                         <p style="color: #1A7F4B; font-weight: 600; margin-bottom: 15px;">Founder & CEO</p>
@@ -437,7 +467,7 @@
                     <!-- Start Single Team -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".4s" style="text-align: center;">
                         <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid #1A7F4B;">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces" alt="Sarah Johnson" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces" alt="Sarah Johnson" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                         </div>
                         <h3>Sarah Johnson</h3>
                         <p style="color: #1A7F4B; font-weight: 600; margin-bottom: 15px;">Head of AI & Technology</p>
@@ -449,7 +479,7 @@
                     <!-- Start Single Team -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".6s" style="text-align: center;">
                         <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid #1A7F4B;">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces" alt="Michael Okafor" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces" alt="Michael Okafor" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                         </div>
                         <h3>Michael Okafor</h3>
                         <p style="color: #1A7F4B; font-weight: 600; margin-bottom: 15px;">Chief Agricultural Officer</p>
@@ -692,23 +722,26 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/tiny-slider.js"></script>
-    <script src="assets/js/glightbox.min.js"></script>
-    <script src="assets/js/count-up.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script type="text/javascript">
-
-        //====== counter up 
-        var cu = new counterUp({
-            start: 0,
-            duration: 2000,
-            intvalues: true,
-            interval: 100,
-            append: " ",
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/wow.min.js" defer></script>
+    <script src="assets/js/tiny-slider.js" defer></script>
+    <script src="assets/js/glightbox.min.js" defer></script>
+    <script src="assets/js/count-up.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+        // Initialize counter after all deferred scripts are loaded
+        window.addEventListener('load', function() {
+            if (typeof counterUp !== 'undefined') {
+                var cu = new counterUp({
+                    start: 0,
+                    duration: 2000,
+                    intvalues: true,
+                    interval: 100,
+                    append: " ",
+                });
+                cu.start();
+            }
         });
-        cu.start();
     </script>
 </body>
 

@@ -4,16 +4,31 @@ Author: GrayGrids
 */
 
 (function () {
-    //===== Prealoder
-
-    window.onload = function () {
-        window.setTimeout(fadeout, 500);
-    }
-
+    //===== Preloader - Faster fadeout
     function fadeout() {
-        document.querySelector('.preloader').style.opacity = '0';
-        document.querySelector('.preloader').style.display = 'none';
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.3s ease';
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 300);
+        }
     }
+    
+    // Hide preloader as soon as DOM is ready, don't wait for all resources
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(fadeout, 100);
+        });
+    } else {
+        setTimeout(fadeout, 100);
+    }
+    
+    // Fallback for slow connections
+    window.addEventListener('load', function() {
+        setTimeout(fadeout, 50);
+    });
 
 
     /*=====================================
