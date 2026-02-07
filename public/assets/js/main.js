@@ -9,19 +9,21 @@ Author: GrayGrids
     ======================================= */
     window.onscroll = function () {
         var header_navbar = document.querySelector(".navbar-area");
+        if (!header_navbar) return;
         var sticky = header_navbar.offsetTop;
 
-        var logo = document.querySelector('.navbar-brand img')
+        var logo = document.querySelector('.navbar-brand img');
         if (window.pageYOffset > sticky) {
           header_navbar.classList.add("sticky");
-          logo.src = 'assets/images/logo/logo.svg';
+          if (logo) logo.src = '/assets/images/logo/logo.svg';
         } else {
           header_navbar.classList.remove("sticky");
-          logo.src = 'assets/images/logo/white-logo.svg';
+          if (logo) logo.src = '/assets/images/logo/white-logo.svg';
         }
 
         // show or hide the back-top-top button
         var backToTo = document.querySelector(".scroll-top");
+        if (!backToTo) return;
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             backToTo.style.display = "flex";
         } else {
@@ -95,9 +97,11 @@ Author: GrayGrids
 
     //===== mobile-menu-btn
     let navbarToggler = document.querySelector(".mobile-menu-btn");
-    navbarToggler.addEventListener('click', function () {
-        navbarToggler.classList.toggle("active");
-    });
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function () {
+            navbarToggler.classList.toggle("active");
+        });
+    }
 
     //===== Features Slider
     const featuresSlider = document.querySelector('.features-slider');

@@ -1,70 +1,33 @@
-# AgriCore AI Landing Page
+# AgriCore AI Landing (Next.js + TypeScript)
 
-A modern, responsive landing page for AgriCore AI - Smart Farming for Every Farmer, Everywhere.
+This project has been migrated from static HTML into a Next.js TypeScript app while preserving the exact existing UI, wording, styling, and animations.
 
-## 🚀 Deployment
+## Run locally
 
-This project is configured for Vercel deployment.
-
-### Quick Deploy
-
-1. **Using Vercel CLI:**
-   ```bash
-   npm i -g vercel
-   vercel
-   ```
-
-2. **Using GitHub:**
-   - Push your code to GitHub
-   - Import the repository in [Vercel Dashboard](https://vercel.com)
-   - Vercel will auto-detect and deploy
-
-3. **Using Vercel Dashboard:**
-   - Go to [Vercel Dashboard](https://vercel.com)
-   - Click "New Project"
-   - Import your Git repository
-   - Deploy!
-
-## 📁 Project Structure
-
-```
-agricoreai_landing/
-├── index.html          # Main HTML file
-├── 404.html           # 404 error page
-├── assets/
-│   ├── css/           # Stylesheets
-│   ├── js/            # JavaScript files
-│   ├── images/        # Images and logos
-│   └── fonts/         # Font files
-├── vercel.json        # Vercel configuration
-└── README.md          # This file
+```bash
+npm install
+npm run dev
 ```
 
-## 🛠️ Technologies
+Open `http://localhost:3000`.
 
-- HTML5
-- CSS3 (Bootstrap, Custom CSS)
-- JavaScript (Vanilla JS, WOW.js, Tiny Slider)
-- LineIcons
+## Build for production
 
-## 📝 Features
+```bash
+npm run build
+npm run start
+```
 
-- Fully responsive design
-- Modern UI/UX
-- Smooth animations
-- Feature slider
-- Contact form
-- SEO optimized
+## Deploy to Vercel
 
-## 🌐 Live Site
+1. Push this repo to GitHub/GitLab/Bitbucket.
+2. Import the project in Vercel.
+3. Vercel auto-detects Next.js and deploys with zero extra setup.
 
-Deployed on Vercel: [Your Vercel URL]
+## Project structure
 
-## 📧 Contact
-
-For questions about AgriCore AI, visit: [Contact Section]
-
----
-
-© 2025 AgriCore AI. All rights reserved.
-
+- `app/layout.tsx`: Global metadata and head asset loading.
+- `app/page.tsx`: Main landing page rendering legacy HTML content.
+- `app/not-found.tsx`: 404 page.
+- `public/assets/*`: Existing CSS, JS, images, and fonts.
+- `lib/home-body.html`: Exact migrated body markup from the original landing page.
