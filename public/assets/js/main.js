@@ -41,7 +41,9 @@ Author: GrayGrids
 		for (var i = 0; i < sections.length; i++) {
 			var currLink = sections[i];
 			var val = currLink.getAttribute('href');
-			var refElement = document.querySelector(val);
+			var hash = val && val.indexOf('#') >= 0 ? val.split('#')[1] : null;
+			var refElement = hash ? document.querySelector('#' + hash) : null;
+			if (!refElement) continue;
 			var scrollTopMinus = scrollPos + 73;
 			if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
 				document.querySelector('.page-scroll').classList.remove('active');
